@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import "./App.css";
 import CounterCard from "./components/CounterCard";
 import StudentCard from "./components/StudentCard";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [students, setStudents] = useState([
@@ -35,19 +36,22 @@ function App() {
     <>
       {/* <React.Fragment> */}
       {/* <Fragment> */}
-      <div style={{ display: "flex", gap: "1.25rem" }}>
-        <CounterCard />
-        <CounterCard />
-        <CounterCard />
-      </div>
-      <div>
-        <h2>Students List</h2>
-        <div style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap" }}>
-          {students.map((student, index) => (
-            <StudentCard stdDetails={student} key={index} />
-          ))}
+      <Navbar />
+      <section style={{ marginTop: "78px" }}>
+        <div style={{ display: "flex", gap: "1.25rem" }}>
+          <CounterCard />
+          <CounterCard />
+          <CounterCard />
         </div>
-      </div>
+        <div>
+          <h2>Students List</h2>
+          <div style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap" }}>
+            {students.map((student, index) => (
+              <StudentCard stdDetails={student} key={index} />
+            ))}
+          </div>
+        </div>
+      </section>
       {/* </Fragment> */}
       {/* </React.Fragment> */}
     </>

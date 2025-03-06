@@ -2,7 +2,7 @@ import React from "react";
 
 function StudentCard(props) {
   //Note : Props are immutable. It means we can not overwrite the actual props
-
+  console.log(props.stdDetails);
   return (
     <div
       style={{
