@@ -3,6 +3,9 @@ import "./App.css";
 import CounterCard from "./components/CounterCard";
 import StudentCard from "./components/StudentCard";
 import Navbar from "./components/Navbar";
+import ConditionalRendering from "./components/ConditionalRendering";
+import PopupModel from "./components/PopupModel";
+import Accordian from "./components/Accordian";
 
 function App() {
   const [students, setStudents] = useState([
@@ -51,6 +54,17 @@ function App() {
             ))}
           </div>
         </div>
+        <ConditionalRendering />
+        <section
+          style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}
+        >
+          <PopupModel />
+          <Accordian />
+          <Accordian />
+          <Accordian />
+          <Accordian />
+          <Accordian />
+        </section>
       </section>
       {/* </Fragment> */}
       {/* </React.Fragment> */}
