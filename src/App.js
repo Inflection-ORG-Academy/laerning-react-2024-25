@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import CounterCard from "./components/CounterCard";
 import StudentCard from "./components/StudentCard";
@@ -6,6 +6,12 @@ import Navbar from "./components/Navbar";
 import ConditionalRendering from "./components/ConditionalRendering";
 import PopupModel from "./components/PopupModel";
 import Accordian from "./components/Accordian";
+import { Route, Routes } from "react-router";
+
+import HomePage from "./pages/Home";
+import AboutPage from "./pages/About";
+import ContactPage from "./pages/Contact";
+import NotFoundPage from "./pages/NotFound";
 
 function App() {
   const [students, setStudents] = useState([
@@ -37,10 +43,17 @@ function App() {
 
   return (
     <>
-      {/* <React.Fragment> */}
-      {/* <Fragment> */}
       <Navbar />
-      <section style={{ marginTop: "78px" }}>
+
+      <section style={{ marginTop: "76px" }}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/*" element={<NotFoundPage />} />
+        </Routes>
+      </section>
+      {/* <section style={{ marginTop: "78px" }}>
         <div style={{ display: "flex", gap: "1.25rem" }}>
           <CounterCard />
           <CounterCard />
@@ -65,9 +78,7 @@ function App() {
           <Accordian />
           <Accordian />
         </section>
-      </section>
-      {/* </Fragment> */}
-      {/* </React.Fragment> */}
+      </section> */}
     </>
   );
 }
